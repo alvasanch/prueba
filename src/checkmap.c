@@ -6,7 +6,7 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:05:05 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/02/14 13:54:01 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/02/29 13:08:16 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	save_map(t_map_info *map_info)
 	j = 0;
 	new_line = get_next_line(map_info->fd);
 	if (!new_line)
-		print_error("error, mapa vacio.", map_info);
+		print_error("error, mapa vacio o tipo archivo no válido.", map_info);
 	map_info->x_size = ft_strlen(new_line);
 	map_info->map[0] = new_line;
 	while (new_line != NULL)
