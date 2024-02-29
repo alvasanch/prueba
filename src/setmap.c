@@ -6,7 +6,7 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:05:39 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/02/14 12:31:29 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:27:28 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,8 @@ void	set_player_t(t_map_info *map_info)
 	mlx_image_t		*player;
 	int				pos_y;
 	int				pos_x;
-	char			*path;
 
-	path = NULL;
-	path = create_path(map_info, "", path);
-	player_t = mlx_load_png(path);
-	free (path);
+	player_t = mlx_load_png("./sprites/void.png");
 	player = mlx_texture_to_image(map_info->mlx, player_t);
 	pos_y = map_info->p_pos_y * 64;
 	pos_x = map_info->p_pos_x * 64;
@@ -34,42 +30,12 @@ void	set_player_t(t_map_info *map_info)
 	map_info->player = player;
 }
 
-mlx_image_t	*check_walls_spr(t_map_info *map_info, char content, int y, int x)
-{
-	int	x_size;
-	int	y_size;
-
-	x_size = map_info->x_size;
-	y_size = map_info->y_size;
-	if (content == '1' && y == 0 && x == 0)
-		return (map_info->corner_tl);
-	else if (content == '1' && y == 0 && x == (x_size - 1))
-		return (map_info->corner_tr);
-	else if (content == '1' && y == (y_size - 1) && x == 0)
-		return (map_info->corner_bl);
-	else if (content == '1' && y == (y_size - 1) && x == (x_size - 1))
-		return (map_info->corner_br);
-	else if (content == '1' && y == 0)
-		return (map_info->t_wall);
-	else if (content == '1' && x == 0)
-		return (map_info->l_wall);
-	else if (content == '1' && y == (y_size - 1))
-		return (map_info->b_wall);
-	else if (content == '1' && x == (x_size - 1))
-		return (map_info->r_wall);
-	return (NULL);
-}
-
 mlx_image_t	*check_sprites(t_map_info *map_info, int y, int x)
 {
-	mlx_image_t	*return_value;
-
-	return_value = check_walls_spr(map_info, map_info->map[y][x], y, x);
-	if (return_value)
-		return (return_value);
+	//añadir el "devolver" las imágenes de los enemigos cuando te encuentres sus letras correspondientes en el mapa
 	if (map_info->map[y][x] == '1')
 		return (map_info->stone);
-	else if (map_info->map[y][x] == '0' || map_info->map[y][x] == 'P')
+	if (map_info->map[y][x] == '0' || map_info->map[y][x] == 'P')
 		return (map_info->ground);
 	else if (map_info->map[y][x] == 'C')
 	{
@@ -82,6 +48,25 @@ mlx_image_t	*check_sprites(t_map_info *map_info, int y, int x)
 		return (map_info->exit);
 	return (NULL);
 }
+/* int i;
+
+i = 0;
+if (mlx->hades_t_brillante->instance[0].enabled == true)
+{
+	while (i < enemies)
+	{
+		mlx->hades_brillante->instance[i].enabled == false;
+		mlx->hades_apagao->instance[i].enabled == true;
+	}
+}
+else if (mlx->hades_apagado->instance[0].enabled == true)
+{
+	while (i < enemies)
+	{
+		mlx->hades_apagao->instance[i].enabled == false;
+		mlx->hades_brillante->instance[i].enabled == true;
+	}
+} */
 
 void	set_tiles(t_map_info *map_info)
 {
@@ -100,10 +85,6 @@ void	set_tiles(t_map_info *map_info)
 			img = check_sprites(map_info, y, x);
 			if (mlx_image_to_window(mlx, img, (x++) * 64, y * 64) < 0)
 				print_error("error renderizado de imagen", map_info);
-			if (map_info->map[y][x - 1] == 'E')
-				if (mlx_image_to_window(map_info->mlx, map_info->c_exit, (x - 1)
-						* 64, y * 64) < 0)
-					print_error("error renderizado de salida.", map_info);
 		}
 		y++;
 	}

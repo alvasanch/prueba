@@ -6,14 +6,14 @@
 #    By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 11:43:50 by alvasanc          #+#    #+#              #
-#    Updated: 2024/02/14 13:06:51 by alvasanc         ###   ########.fr        #
+#    Updated: 2024/02/27 11:53:20 by alvasanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 USER = alvasanc
 CC = gcc
-CFLAGS = -Wextra -Wall -Werror 
+CFLAGS = -Wextra -Wall -Werror -g
 MLX42 = lib/MLX42
 LIBFT = lib/libft+gnl+printf
 SRC_DIR = src/

@@ -6,7 +6,7 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:00:15 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/01/29 12:20:19 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:59:00 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ char	*ft_get_line(char *aux_line)
 		get_line[j] = aux_line[j];
 		j++;
 	}
-	if (aux_line[j] == '\n')
-		get_line[j++] = '\n';
+	// if (aux_line[j] == '\n')
+	// 	get_line[j++] = '\n';
 	get_line[j] = '\0';
 	return (get_line);
 }
