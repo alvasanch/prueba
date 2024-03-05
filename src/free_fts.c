@@ -6,7 +6,7 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 10:13:30 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/02/29 12:10:26 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/03/05 11:07:55 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	free_items_texture(t_map_info *map_info)
 		mlx_delete_texture(map_info->coin_t);
 	if (map_info->player_t)
 		mlx_delete_texture(map_info->player_t);
-	//añadir la eliminación de las texturas de los enemigos
 }
 
 void	free_all(t_map_info *map_info)

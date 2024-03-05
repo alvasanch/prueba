@@ -6,7 +6,7 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:29:39 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/02/29 12:09:38 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/03/05 11:07:35 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	load_textures_imgs(t_map_info *m_i)
 {
-	//añadir tanto la carga de la text como de la img por cada tipo de enemigo
 	m_i->mlx = mlx_init(m_i->x_size * 64, m_i->y_size * 64, "Window", false);
 	m_i->stone_t = mlx_load_png("./sprites/pared.png");
 	m_i->ground_t = mlx_load_png("./sprites/suelo.png");

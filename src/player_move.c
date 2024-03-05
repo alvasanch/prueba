@@ -6,7 +6,7 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:53:17 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/02/29 12:08:29 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/03/05 11:04:19 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,6 @@ void	check_move(t_map_info *map_info, int direction, int y, int x)
 		}
 		else if (next_pos == 'E')
 			check_exit_move(map_info, direction);
-		/*else if (next_pos == 'H' || next_pos == 'O')
-		{
-			ft_printf("GAME OVER!\n");
-			free_all(map_info);
-			exit (0);
-		}*/
-		else
 			move_player(map_info, direction);
 	}
 }

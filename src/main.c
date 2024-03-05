@@ -6,13 +6,13 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:45:02 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/02/29 11:24:53 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/03/05 11:06:30 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void leaks (void)
+void	leaks(void)
 {
 	system ("leaks -q so_long");
 }
@@ -23,7 +23,6 @@ void	initialize_textures(t_map_info *map_info)
 	map_info->ground_t = NULL;
 	map_info->coin_t = NULL;
 	map_info->exit_t = NULL;
-	map_info->c_exit_t = NULL;
 	map_info->player_t = NULL;
 }
 

@@ -6,7 +6,7 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:05:39 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/02/29 12:27:28 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/03/05 11:03:39 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	set_player_t(t_map_info *map_info)
 
 mlx_image_t	*check_sprites(t_map_info *map_info, int y, int x)
 {
-	//añadir el "devolver" las imágenes de los enemigos cuando te encuentres sus letras correspondientes en el mapa
 	if (map_info->map[y][x] == '1')
 		return (map_info->stone);
 	if (map_info->map[y][x] == '0' || map_info->map[y][x] == 'P')
@@ -48,25 +47,6 @@ mlx_image_t	*check_sprites(t_map_info *map_info, int y, int x)
 		return (map_info->exit);
 	return (NULL);
 }
-/* int i;
-
-i = 0;
-if (mlx->hades_t_brillante->instance[0].enabled == true)
-{
-	while (i < enemies)
-	{
-		mlx->hades_brillante->instance[i].enabled == false;
-		mlx->hades_apagao->instance[i].enabled == true;
-	}
-}
-else if (mlx->hades_apagado->instance[0].enabled == true)
-{
-	while (i < enemies)
-	{
-		mlx->hades_apagao->instance[i].enabled == false;
-		mlx->hades_brillante->instance[i].enabled == true;
-	}
-} */
 
 void	set_tiles(t_map_info *map_info)
 {

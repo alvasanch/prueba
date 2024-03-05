@@ -6,7 +6,7 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:25:46 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/02/29 12:10:46 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/03/05 10:59:15 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ typedef struct t_map_information
 	mlx_texture_t	*coin_t;
 	mlx_texture_t	*exit_t;
 	mlx_texture_t	*player_t;
-	//añadir las variables de los enemigos tanto textura como img
 }							t_map_info;
 
 void		check_map(int argc, char **argv, t_map_info *map_info);
