@@ -6,16 +6,11 @@
 /*   By: alvasanc <alvasanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:45:02 by alvasanc          #+#    #+#             */
-/*   Updated: 2024/03/05 11:06:30 by alvasanc         ###   ########.fr       */
+/*   Updated: 2024/03/11 11:38:04 by alvasanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-void	leaks(void)
-{
-	system ("leaks -q so_long");
-}
 
 void	initialize_textures(t_map_info *map_info)
 {
@@ -48,6 +43,7 @@ t_map_info	*new_map_info(void)
 	map_info->ff_map = NULL;
 	map_info->fd = 0;
 	map_info->steps = 0;
+	map_info->mlx = NULL;
 	initialize_textures(map_info);
 	return (map_info);
 }
@@ -76,7 +72,6 @@ int	main(int argc, char **argv)
 {
 	t_map_info		*map_info;
 
-	atexit(leaks);
 	map_info = new_map_info();
 	if (!map_info)
 		print_error("fallo asignacion de memoria(map_info)", map_info);
